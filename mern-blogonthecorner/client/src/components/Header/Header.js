@@ -1,5 +1,7 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
+import React, { Component }  from 'react';
+
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter,faInstagram,faFacebook,faPinterest } from '@fortawesome/free-brands-svg-icons';
@@ -45,7 +47,7 @@ return (
             <li className="header-menu-item"><Link style= {{textDecoration:"none", color:"inherit"}} to="/">ABOUT</Link></li>
             <li className="header-menu-item"><Link style= {{textDecoration:"none", color:"inherit"}} to="/">CONTACT</Link></li>
             <li className="header-menu-item"><Link style= {{textDecoration:"none", color:"inherit"}} to="/write">WRITE</Link></li>
-            <li className="header-menu-item"><Link style= {{textDecoration:"none", color:"inherit"}} to="/">{user&&"LOGOUT"}</Link></li>
+            <li   className="header-menu-item"><Link style= {{textDecoration:"none", color:"inherit"}} to="/">{user&&"LOGOUT"}</Link></li>
 
             <div>
           

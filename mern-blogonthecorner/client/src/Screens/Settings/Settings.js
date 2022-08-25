@@ -1,4 +1,6 @@
 import './settings.css'
+import React, { Component }  from 'react';
+
 import SideBar from '../../components/Sidebar/SideBar'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

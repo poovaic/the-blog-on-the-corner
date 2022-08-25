@@ -1,28 +1,56 @@
 import './singlePost.css'
 import {faPenToSquare,faTrashCan} from '@fortawesome/free-solid-svg-icons'
-
-
+import { useLocation } from 'react-router';
+import axios from 'axios';
 import React from 'react'
+import { useState,useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router-dom';
 
 export default function SinglePost() {
+  const location = useLocation();
+  //console.log('location',location.pathname.split("/")[2])
+  const path = location.pathname.split("/")[2]
+  const [post,setPost] =useState({})
+
+
+  useEffect(()=>{
+    const getPost = async()=>{
+      const res = await axios.get("/posts/"+path);
+      console.log('res',res)
+
+      setPost(res.data)
+    };
+    getPost()
+  },[path])
+  
+
+
   return (
+  
     <div className ="singlePost">
       <div className = "singlePostContainer">
-      <img className="singlePostImg" src="https://images.pexels.com/photos/945453/pexels-photo-945453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt=""/>
-        <h1 className="singlePostTitle">
-            Lorem ipsum dolor sit amet.
+        {post.photo && (
+      <img className="singlePostImg" src={post.photo} alt=""/>
+      )}
+      <h1 className="singlePostTitle">
+            {post.title}
             <div className="singlePostEdit">
                 <FontAwesomeIcon className="singlePostIcon" icon={faPenToSquare}/>
                 <FontAwesomeIcon className="singlePostIcon" icon={faTrashCan}/>
+                
             </div>
         </h1>
         <div className="singlePostInfo">
-            <span className="singlePostAuthor">Author:<b>Poovai</b></span>
-            <span className="singlePostDate">1 hour Ago</span>
+            <span className="singlePostAuthor">Author:
+            <Link to={`/?user=${post.username}`} style={{textDecoration:"none",color:"#b39656"}}>
+            <b>{post.username}</b>
+            </Link>
+            </span>
+            <span className="singlePostDate">{new Date(post.createdAt).toDateString()}</span>
 
         </div>
-        <p className="singlePostDesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tortor mauris, pharetra eget enim a, sagittis dapibus diam. Sed consectetur luctus justo a ullamcorper. Duis vitae risus nunc. Aliquam elementum tempus urna sit amet elementum. Donec turpis ex, volutpat scelerisque facilisis ac, gravida a risus. Fusce in efficitur nisi, sollicitudin euismod libero. Cras lacinia vel justo ornare rhoncus. Aliquam elementum, metus at congue elementum, dolor erat accumsan arcu, et egestas erat dolor quis enim. Proin auctor massa ac ante aliquam ultrices. Sed condimentum libero vel felis varius, quis ultrices ante aliquet. Aenean lacinia ex ut ante sollicitudin semper. Proin tincidunt efficitur aliquam.</p>
+        <p className="singlePostDesc">{post.description}</p>
       </div>
     </div>
   )
