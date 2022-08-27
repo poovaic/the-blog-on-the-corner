@@ -16,16 +16,17 @@
   }
   
   .writeFormGroup {
-    margin-left: 150px;
+    margin-left: 10%;
     display: flex;
     align-items: center;
+    
   }
   
   .writeIcon {
     width: 25px;
     height: 25px;
-    border-radius: 50%;
-    border: 1px solid;
+    
+   
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,6 +40,7 @@
     border: none;
     padding: 20px;
     width: 70vw;
+    margin-top:30px;
   }
   
   .writeInput:focus {
@@ -48,7 +50,8 @@
   .writeText {
     font-size: 20px;
     height: 70vh;
-    width:80%;
+    width: 70vw;
+   
   }
   
   .writeSubmit {

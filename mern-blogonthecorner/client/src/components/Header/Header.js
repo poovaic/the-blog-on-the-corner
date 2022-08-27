@@ -1,16 +1,17 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
 import React, { Component }  from 'react';
-
+import { useContext } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter,faInstagram,faFacebook,faPinterest } from '@fortawesome/free-brands-svg-icons';
 import {faSearch,faBars,faX} from '@fortawesome/free-solid-svg-icons'
 import react,{useState} from 'react';
+import { Context } from "../../context/Context";
+
 
 
 export default function Header() {
-  const user = false;
 
   const[active, setActive] = useState(false);
 
@@ -19,6 +20,11 @@ export default function Header() {
   setActive(!active)
   
   }  
+  const {user,dispatch} = useContext(Context);
+  const handleLogout = ()=>{
+    dispatch({type:"LOGOUT"})  
+  }
+
 
 return (
     <div className='header'>
@@ -47,7 +53,12 @@ return (
             <li className="header-menu-item"><Link style= {{textDecoration:"none", color:"inherit"}} to="/">ABOUT</Link></li>
             <li className="header-menu-item"><Link style= {{textDecoration:"none", color:"inherit"}} to="/">CONTACT</Link></li>
             <li className="header-menu-item"><Link style= {{textDecoration:"none", color:"inherit"}} to="/write">WRITE</Link></li>
-            <li   className="header-menu-item"><Link style= {{textDecoration:"none", color:"inherit"}} to="/">{user&&"LOGOUT"}</Link></li>
+            {/* <li className="header-menu-item" >{user && <Link OnClick={handleLogout}
+            style= {{textDecoration:"none", color:"inherit"}} to="/"  
+            >LOGOUT</Link>}</li> */}
+             <li className="header-menu-item" onClick={handleLogout}>
+            {user && "LOGOUT"}
+          </li>
 
             <div>
           
@@ -56,7 +67,7 @@ return (
             
             <div>
               { user ? (
-            <img className = "header-3-img" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt=""/> 
+            <img className = "header-3-img" src={user.profilePic} alt=""/> 
               ) : (
                  <ul className="header-menu-item">
                  <li className="header-menu-item"><Link style= {{textDecoration:"none", color:"inherit"}} to="/login">LOGIN</Link></li>

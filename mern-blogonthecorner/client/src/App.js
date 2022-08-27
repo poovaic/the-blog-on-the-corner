@@ -1,6 +1,6 @@
 import { Routes, Route} from "react-router-dom";
 import React, { Component }  from 'react';
-
+import { Context } from "./context/Context";
 import './App.css';
 import Header from './components/Header/Header';
 import Home from './Screens/Home/Home';
@@ -9,11 +9,12 @@ import Write from './Screens/Write/Write';
 import Settings from './Screens/Settings/Settings';
 import Login from './Screens/Login/Login';
 import Register from './Screens/Register/Register';
+import { useContext } from "react";
 
 
 
 function App() {
-  const user = false;
+  const {user} = useContext(Context);
   
   return (
       
