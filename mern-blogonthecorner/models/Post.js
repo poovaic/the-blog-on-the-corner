@@ -21,7 +21,11 @@ const Post = new Schema(
     categories:{
         type:Array,
         required:false
-    }
+    },
+    photo: {
+        type: String,
+        required: false,
+      }
 },
     {timestamps:true},
 

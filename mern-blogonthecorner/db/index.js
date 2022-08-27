@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 
 let MONGODB_URI = process.env.PROD_MONGODB || process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/mernDB'
 
-mongoose.connect(MONGODB_URI, {useUnifiedTopology: true, useNewUrlParser: true})
+mongoose.connect(MONGODB_URI, {useUnifiedTopology: true, useNewUrlParser: true,useFindAndModify:true})
 .then(() => {
   console.log('Succesfully connected to MongoDB.');
 })

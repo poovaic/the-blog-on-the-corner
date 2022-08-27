@@ -7,6 +7,7 @@ const bcrypt = require('bcrypt'); //importing hashing package
 
 const registerUser = async (req, res) =>{
     try{ 
+        
         //hashing the password
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(req.body.password, salt);
@@ -18,9 +19,10 @@ const registerUser = async (req, res) =>{
          });
 
          const user = await newUser.save();
-         res.status(200).json(user)
+         return res.status(200).json(user)
     }catch(err){
-        res.status(500).json(err);
+        return res.status(500).send(err);
+
     }
 };
 
@@ -34,8 +36,8 @@ const loginUser = async (req, res) =>{
        //if username is incorrect
        if(!user){
 
-       res.status(400).json("Incorrect username")
-       return;
+       res.status(400).send("Incorrect username")
+       
        }
         
     
@@ -43,18 +45,18 @@ const loginUser = async (req, res) =>{
         //if password is incorrect
         if(!validate){
 
-        res.status(400).json("Incorrect password");
+        res.status(400).send("Incorrect password");
         return;
         }
         //sending others except password
         
         const {password, ...others} = user._doc;    
        
-        res.status(200).json(others);
+        return res.status(200).json(others);
         
 
     }catch(err){
-        res.status(500).json(err);
+        return res.status(500).send(err);
     }
 }
 
