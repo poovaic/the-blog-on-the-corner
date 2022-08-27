@@ -39,12 +39,13 @@ console.log(isFetching)
             placeholder="Enter your Username"
             ref={userRef}/>
             <label>Password</label>
-            <input type="text" placeholder="Enter your password"
+            <input type="password" placeholder="Enter your password"
             ref={passwordRef}/>
             <button type = "submit" className="loginButton"
             disabled={isFetching}>Login</button>
+
             <button className="loginRegisterButton">
-              <Link style ={{textDecoration:"none",color:"black"}} to="/register">Register</Link></button>
+            <Link style ={{textDecoration:"none",color:"black"}} to="/register">Register</Link></button>
 
 
         </form>

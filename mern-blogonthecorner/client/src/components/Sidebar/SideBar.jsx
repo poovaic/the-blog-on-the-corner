@@ -36,12 +36,12 @@ export default function SideBar() {
           {cat.map((c)=>(
             <li className="sidebarListItem">{c.name}</li>
           ))}
-          <li className="sidebarListItem">Life</li></ul>
+          </ul>
       </div>
       <div className="sidebarItem">
       <span className="sidebarTitle">FOLLOW US</span>
         <div className="sidebarSocial">
-        <FontAwesomeIcon className="sidebarIcon" icon={faTwitter} />
+      <FontAwesomeIcon className="sidebarIcon" icon={faTwitter} />
       <FontAwesomeIcon className="sidebarIcon" icon={faFacebook} />
       <FontAwesomeIcon className="sidebarIcon" icon={faPinterest} />
       <FontAwesomeIcon className="sidebarIcon " icon={faInstagram} />

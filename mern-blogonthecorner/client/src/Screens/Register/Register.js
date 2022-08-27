@@ -48,7 +48,7 @@ export default function Register() {
             className="registerInput"
             onChange={(e)=>setEmail(e.target.value)}placeholder="Enter your email"/>
             <label>Password</label>
-            <input type="text"
+            <input type="password"
             className="registerInput"
             onChange={(e)=>setPassword(e.target.value)} placeholder="Enter your password"/>
             <button className="registerButton">Register</button>

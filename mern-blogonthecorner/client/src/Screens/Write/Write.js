@@ -15,6 +15,7 @@ export default function Write() {
   const [file,setFile]=useState(null)
 const {user} = useContext(Context)
 
+
  
 const handleSubmit = async (e) => {
   e.preventDefault();
@@ -58,7 +59,8 @@ const handleSubmit = async (e) => {
             </div>
             
             <div className = "writeFormGroup">
-                <textarea placeholder="Tell your story" type="text" className="writeText"
+                <textarea  type="text" className="writeText"
+                placeholder="Tell your story"
                 onChange={(e)=>setDescription(e.target.value)}> 
                 </textarea>
             </div> 

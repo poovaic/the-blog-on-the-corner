@@ -1,5 +1,5 @@
 import './singlePost.css'
-import {faPenToSquare,faTrashCan} from '@fortawesome/free-solid-svg-icons'
+import {faLessThanEqual, faPenToSquare,faTrashCan} from '@fortawesome/free-solid-svg-icons'
 import { useLocation } from 'react-router';
 import axios from 'axios';
 import React from 'react'
@@ -15,6 +15,11 @@ export default function SinglePost() {
   //console.log('location',location.pathname.split("/")[2])
   const path = location.pathname.split("/")[2]
   const [post,setPost] =useState({})
+  //to create a new post using write icon
+  const [description,setDescription]=useState("")
+  const [title,setTitle]=useState("")
+  const [updateMode,setUpdateMode]=useState(false)
+
 
 
   useEffect(()=>{
@@ -22,7 +27,10 @@ export default function SinglePost() {
       const res = await axios.get("/posts/"+path);
       console.log('res',res)
 
+      
       setPost(res.data)
+      setTitle(res.data.title)
+      setDescription(res.data.description)
     };
     getPost()
   },[path])
@@ -34,12 +42,29 @@ const handleDelete =async()=>{
   try{
 
   
-  await axios.delete(`/posts/${path}`,{data:{username:user.username}});
+  await axios.delete(`/posts/${post._id}`,{data:{username:user.username}});
   window.location.replace("/")
+  
   }catch(err){
 
   }
 }
+
+//UPDATE
+const handleUpdate= async()=>{
+  try{
+
+  
+    await axios.put(`/posts/${post._id}`,{username:user.username,title,description});
+    //window.location.reload()
+    setUpdateMode(false)
+    }catch(err){
+  
+    }
+}
+
+
+
   return (
   
     <div className ="singlePost">
@@ -47,24 +72,36 @@ const handleDelete =async()=>{
         {post.photo && (
       <img className="singlePostImg" src={PF + post.photo} alt=""/>
       )}
-      <h1 className="singlePostTitle">
-            {post.title}
+
+      {/* UPDATING A POST */}
+      {updateMode? (
+      <input type = "text" value = {title} className="singlePostTitleInput"
+      autoFocus
+      onChange={(e)=>setTitle(e.target.value)}/>
+      ) : (
+
+        <h1 className="singlePostTitle">
+            {title}
             
-               <div className="singlePostEdit">
+               
                {user && post.username === user.username && (
-                <>
-               <FontAwesomeIcon className="singlePostIcon" icon={faPenToSquare}/>
+                <div className="singlePostEdit">
+               <FontAwesomeIcon className="singlePostIcon" icon={faPenToSquare}
+               onClick={()=>setUpdateMode(true)}/>
                
                <FontAwesomeIcon  className="singlePostIcon" icon={faTrashCan}
                onClick={handleDelete}/>
-               </>
+               </div>
                )}
                
-              </div>
+              
             
               
             
             </h1>
+
+      ) }
+      
         
         <div className="singlePostInfo">
             <span className="singlePostAuthor">Author:
@@ -75,8 +112,22 @@ const handleDelete =async()=>{
             <span className="singlePostDate">{new Date(post.createdAt).toDateString()}</span>
 
         </div>
-        <p className="singlePostDesc">{post.description}</p>
-      </div>
+        { updateMode?  (
+          <textarea 
+          className="singlePostDescInput"
+          value={description}
+          onChange={(e)=>setDescription(e.target.value)}/>
+        ) : (
+        <p className="singlePostDesc">{description}</p>
+        )
+        }   
+        {updateMode && (
+        <button className="singlePostButton" onClick={handleUpdate}>Update Post</button>
+      
+     
+        )
+        }
+         </div>
     </div>
   )
 }

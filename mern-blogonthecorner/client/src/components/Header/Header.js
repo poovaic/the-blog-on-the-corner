@@ -12,15 +12,18 @@ import { Context } from "../../context/Context";
 
 
 export default function Header() {
-
+  const {user,dispatch} = useContext(Context);
   const[active, setActive] = useState(false);
+
+  const PF = "http://localhost:5000/images/"
+  //console.log('profilepic',user.profilePic)
 
   const showMenu = ()=>{
     console.log('onclicktest')
   setActive(!active)
   
   }  
-  const {user,dispatch} = useContext(Context);
+ 
   const handleLogout = ()=>{
     dispatch({type:"LOGOUT"})  
   }
@@ -66,8 +69,9 @@ return (
             </div>
             
             <div>
+              
               { user ? (
-            <img className = "header-3-img" src={user.profilePic} alt=""/> 
+           <Link to="/settings"><img className = "header-3-img" src={PF+user.profilePic} alt=""/> </Link> 
               ) : (
                  <ul className="header-menu-item">
                  <li className="header-menu-item"><Link style= {{textDecoration:"none", color:"inherit"}} to="/login">LOGIN</Link></li>
