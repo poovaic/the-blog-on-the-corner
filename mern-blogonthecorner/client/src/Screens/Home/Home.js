@@ -31,7 +31,9 @@ const {search} = useLocation();
 
   return (
     <div className="home">
+      <>
       <MainBar/>
+      </>
       <div className='homepage'>
         <Posts posts={posts}/>
         <SideBar/>

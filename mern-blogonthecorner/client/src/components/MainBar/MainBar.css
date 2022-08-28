@@ -6,3 +6,11 @@
     /* object-fit:cover; */
 }
 
+@media(max-width:600px){
+    .mainbar-image{
+        width:100%;
+       
+        height:auto;
+        object-fit: cover;
+    }
+}

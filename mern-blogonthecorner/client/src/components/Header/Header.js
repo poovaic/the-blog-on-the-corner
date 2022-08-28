@@ -1,12 +1,12 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
-import React, { Component }  from 'react';
+import React from 'react';
 import { useContext } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTwitter,faInstagram,faFacebook,faPinterest } from '@fortawesome/free-brands-svg-icons';
+
 import {faSearch,faBars,faX} from '@fortawesome/free-solid-svg-icons'
-import react,{useState} from 'react';
+import {useState} from 'react';
 import { Context } from "../../context/Context";
 
 
@@ -53,7 +53,7 @@ return (
           </div>
 
             <li className="header-menu-item"><Link style= {{textDecoration:"none", color:"inherit"}} to="/">HOME</Link></li>
-            <li className="header-menu-item"><Link style= {{textDecoration:"none", color:"inherit"}} to="/">ABOUT</Link></li>
+          
             <li className="header-menu-item"><Link style= {{textDecoration:"none", color:"inherit"}} to="/">CONTACT</Link></li>
             <li className="header-menu-item"><Link style= {{textDecoration:"none", color:"inherit"}} to="/write">WRITE</Link></li>
             {/* <li className="header-menu-item" >{user && <Link OnClick={handleLogout}
