@@ -6,9 +6,17 @@
     OVERVIEW
     
     
-    The Blog on the Corner is a full stack MERN APP for Blogging ! A user can read others blogs or create an account and write their own blogs.
+    The Blog on the Corner is a full stack MERN APP for Blogging !
+    A user can read others blogs or create an account and write their own blogs.
     
-    All CRUD operations can be performed on the blogs.
+   APP FEATURES 
+   
+   1. Authentication and Authorisation
+   2. CRUD operations
+   3. Blogs
+   4. USer can create an account, write blogs
+   
+   
    
    ![Click here to use the App](https://the-blog-on-the-corner.netlify.app/)
     
