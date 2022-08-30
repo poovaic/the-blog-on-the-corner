@@ -4,11 +4,15 @@
     
     
     OVERVIEW
+    
+    
     The Blog on the Corner is a full stack MERN APP for Blogging ! A user can read others blogs or create an account and write their own blogs.
     
     All CRUD operations can be performed on the blogs.
    
    ![Click here to use the App](https://the-blog-on-the-corner.netlify.app/)
+    
+    
     
     TECHNOLOGIES USED
     
@@ -27,11 +31,23 @@
 
 
 DATABASE MODELS
+
+
 1.User
 2.Blog
 3.Category
 
 
+API END POINTS
+
+1.USER - CREATE/REGISTER  POST : mern-corner-blog.herokuapp.com/api/auth/register
+         UPDATE USER       PUT : mern-corner-blog.herokuapp.com/api/users/:id
+         READ ISER         GET : mern-corner-blog.herokuapp.com/api/users/:id
+         DELETE USER     DELETE: mern-corner-blog.herokuapp.com/api/users/:id
+         LOGIN            POST : mern-corner-blog.herokuapp.com/api/auth/login
+         
+ 2.
+         
 
 
 
