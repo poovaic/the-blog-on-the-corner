@@ -56,8 +56,23 @@ API END POINTS
          
          LOGIN            POST : mern-corner-blog.herokuapp.com/api/auth/login
          
- 2.
+ 2. POSTS - CREATE POST  POST : mern-corner-blog.herokuapp.com/api/posts
+
+
+            GET ALL POSTS GET : mern-corner-blog.herokuapp.com/api/posts
          
+            GET ONE POST GET  : mern-corner-blog.herokuapp.com/api/posts/:id
+            
+            UPDATE POST   PUT :  mern-corner-blog.herokuapp.com/api/posts/:id
+            
+            DELETE POST   PUT :  mern-corner-blog.herokuapp.com/api/posts/:id
+            
+            
+  3. CATEGORIES - CREATE POST : mern-corner-blog.herokuapp.com/api/categories
+
+                  
+                  GET  ALL   : mern-corner-blog.herokuapp.com/api/categories
+
 
 
 
