@@ -11,7 +11,7 @@
     
     TECHNOLOGIES USED
     
-   ![heroku](https://user-images.githubusercontent.com/105741410/187332284-c52be3f4-598f-4c37-b21e-258fd18290fc.jpg)
+  ![React]({https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB})
 
     
    
