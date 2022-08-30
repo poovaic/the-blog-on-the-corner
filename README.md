@@ -19,7 +19,12 @@
  ![mongodb](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
   ![react router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
   ![canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?&style=for-the-badge&logo=Canva&logoColor=white)
-  ![Heroku](https://pyheroku-badge.herokuapp.com/?app=<HEROKU_APP_NAME>&style=<STYLE>)
-  ![]()
+  ![heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
+  ![netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
+   ![express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
    
+   WIREFRAME
    
+   HOMEPAGE
+   ![image](https://user-images.githubusercontent.com/105741410/187499698-48513117-18bc-4fe6-928c-669e201f1825.png)
+
