@@ -23,30 +23,36 @@
   ![netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
    ![express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
    
-   Database Models
+
+
+DATABASE MODELS
+1.User
+2.Blog
+3.Category
+
+
+
    
+WIREFRAME
    
-   
-   WIREFRAME
-   
-   HOMEPAGE
+HOMEPAGE
 
 <img width="602" alt="PROJECT-3-WIREFRAME-HOME" src="https://user-images.githubusercontent.com/105741410/187500509-0855703d-7913-43a2-a364-fc1c2390f4f7.png">
 
 
 
 SINGLE POST
+
+
 <img width="601" alt="SINGLE-BLOG-POST" src="https://user-images.githubusercontent.com/105741410/187502851-acfa45d4-6d2a-4566-a2bb-b317f5cec0cc.png">
 
 
 SIGN-UP
 
-
 <img width="607" alt="SINGUP" src="https://user-images.githubusercontent.com/105741410/187503412-a1ee5114-532c-4648-8d7b-952231def626.png">
 
 
 LOGIN
-
 
 <img width="610" alt="LOGIN" src="https://user-images.githubusercontent.com/105741410/187503945-2e32ef45-6c86-448d-8b77-986f0f8f1310.png">
 
