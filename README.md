@@ -3,7 +3,7 @@
 
     
     
-    OVERVIEW
+   APP OVERVIEW
     
     
     The Blog on the Corner is a full stack MERN APP for Blogging !
@@ -136,6 +136,15 @@ COMPONENT HIERARCHY
 
 
 
+
+POST MVP
+
+I plan to add the following features the App:
+1. Enable the user to select categories of blogs to read.
+2. Add a search bar for the blogs.
+3. Add a method for the user to upload images from a local system or a cloud application
+4. Enable like and comment features for every post.
+5. Create a chat room for the webiste users.
 
 
 
