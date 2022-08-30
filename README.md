@@ -42,7 +42,9 @@ DATABASE MODELS
 
 API END POINTS
 
-1.USER - CREATE/REGISTER  POST : mern-corner-blog.herokuapp.com/api/auth/register
+1.USER 
+
+        CREATE/REGISTER  POST : mern-corner-blog.herokuapp.com/api/auth/register
 
 
          UPDATE USER       PUT : mern-corner-blog.herokuapp.com/api/users/:id
@@ -56,7 +58,10 @@ API END POINTS
          
          LOGIN            POST : mern-corner-blog.herokuapp.com/api/auth/login
          
- 2. POSTS - CREATE POST  POST : mern-corner-blog.herokuapp.com/api/posts
+ 2. POSTS - 
+ 
+ 
+            CREATE POST  POST : mern-corner-blog.herokuapp.com/api/posts
 
 
             GET ALL POSTS GET : mern-corner-blog.herokuapp.com/api/posts
@@ -68,10 +73,13 @@ API END POINTS
             DELETE POST   PUT :  mern-corner-blog.herokuapp.com/api/posts/:id
             
             
-  3. CATEGORIES - CREATE POST : mern-corner-blog.herokuapp.com/api/categories
+  3. CATEGORIES 
+  
+  
+            CREATE POST : mern-corner-blog.herokuapp.com/api/categories
 
                   
-                  GET  ALL   : mern-corner-blog.herokuapp.com/api/categories
+             GET  ALL   : mern-corner-blog.herokuapp.com/api/categories
 
 
 
